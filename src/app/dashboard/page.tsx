@@ -1,8 +1,10 @@
-import { DashBoard } from './DashBoard/DashBoard';
+'use client';
+import supabase from '@/utils/supabase';
+import Dashboard from './DashBoard/DashBoard'; 
 
 const dashBoard = () => {
   return (
-    <DashBoard></DashBoard>
+    <Dashboard supabase={supabase} /> 
   );
 };
 
