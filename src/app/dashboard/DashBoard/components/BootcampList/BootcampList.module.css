@@ -8,7 +8,7 @@
   }
   
   .card {
-    background-color: #eae3e4;
+    background-color: var(--secondary-color);
     border-radius: 1rem;
     overflow: hidden;
     max-width: 350px;
@@ -22,13 +22,15 @@
     margin: 0.75rem 0;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #16131c;
+    font-family: var(--primary-font);
+    color: var(--black-color);
     padding: 0 1.5rem;
   }
   
   .card p {
     margin: 1.25rem 0;
     font-size: 1rem;
+    font-family: var(--secondary-font);
     line-height: 1.5;
     color: #4a4a4a;
     padding: 0 1.5rem;
@@ -52,11 +54,12 @@
     border: 2px solid #b6b1b2;
     border-radius: 0.75rem;
     cursor: pointer;
-    color: #16131c;
+    color: var(--black-color);
     font-size: 1rem;
     font-weight: 500;
+    font-family: var(--secondary-font);
     letter-spacing: 0.01em;
-    background-color: #eae3e4;
+    background-color: var(--secondary-color);
     margin: 1rem auto;
     display: block;
     transition: all 0.2s ease-in-out;

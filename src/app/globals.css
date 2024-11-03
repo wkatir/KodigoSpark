@@ -3,6 +3,7 @@
     --secondary-color: #EAECD5;
     --soft-gray-color: #E0DEE1;
     --black-color: #11121B;
+    --white-color:#fff;
 }
 
 *, *::before, *::after{
