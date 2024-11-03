@@ -1,23 +1,20 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Poppins } from 'next/font/google';
-/* import { Poppins, Space_Grotesk } from 'next/font/google'; */
+import { Poppins, Space_Grotesk } from 'next/font/google'; 
 
 
 
-const poppins = Poppins({
+export const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   weight: ['100', '200', '300', '500']
 });
 
-/* const spaceGrotesk = Space_Grotesk({
+export const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['100', '200', '300', '500']
+  weight: ['300', '500']
 });
- */
-
 
 
 export const metadata: Metadata = {
@@ -41,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
