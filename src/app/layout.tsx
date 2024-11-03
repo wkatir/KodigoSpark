@@ -1,24 +1,22 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Poppins } from 'next/font/google';
-/* import { Poppins, Space_Grotesk } from 'next/font/google'; */
+import { Poppins, Space_Grotesk } from 'next/font/google'; 
 
 
 
 const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['100', '200', '300', '500']
+  weight: ['100', '200', '300', '500'],
+  variable: '--secondary-font',
 });
 
-/* const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['100', '200', '300', '500']
+  weight: ['300', '500'],
+  variable: '--primary-font',
 });
- */
-
-
 
 export const metadata: Metadata = {
   title: 'KodigoSpark | Inscripción a Bootcamps',
@@ -41,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={`${poppins.variable} ${spaceGrotesk.variable}`}>{children}</body>
     </html>
   );
 }
