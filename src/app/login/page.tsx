@@ -1,19 +1,19 @@
 'use client';
-import supabase from '@/utils/supabase';
 import Login from './Login/Login';
-import { useAuth } from '@/hooks/useAuth'; // Asumiendo que este hook devuelve el estado de autenticación
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
+import supabase from '@/utils/supabase';
 
 const LoginForm = () => {
-  const user = useAuth(); 
+  const { user, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (user) {
+    if (!loading && user) { 
       router.push('/dashboard'); 
     }
-  }, [user, router]);
+  }, [user, loading, router]);
 
   return (
     <div>

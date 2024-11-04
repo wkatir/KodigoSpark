@@ -1,4 +1,3 @@
-// File: src/components/Dashboard.tsx
 import { useBootcamps } from '@/hooks/useBootcamps';
 import { BootcampList } from './components/BootcampList/BootcampList';
 import { useState } from 'react';
@@ -7,6 +6,7 @@ import { Navbar } from '@/shared/components/Navbar/Navbar';
 import styles from '@/app/dashboard/DashBoard/DashBoard.module.css';
 import Footer from '@/shared/components/Footer/Footer';
 import { InscripcionForm } from './components/InscriptionForm/InscriptionForm';
+import LogoutButton from './components/LogoutButton/LogoutButton';
 
 export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
   const [showForm, setShowForm] = useState(false);
@@ -30,9 +30,9 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
     <>
       <div className={styles.header}>
         <Navbar />
+        <LogoutButton></LogoutButton>
         <div className={styles.user}>
           <span>{user.email}</span>
-          {/* Aquí se eliminó el botón de cerrar sesión */}
         </div>
       </div>
 
