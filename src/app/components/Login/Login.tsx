@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { SupabaseClient } from '@supabase/supabase-js';
+import styles from '@/app/components/Login/Login.module.css';
+import { FaCircleUser } from 'react-icons/fa6';
+import { RiLockPasswordFill } from 'react-icons/ri';
 
 interface LoginProps {
   supabase: SupabaseClient;
@@ -52,57 +55,53 @@ export default function Login({ supabase }: LoginProps) {
   };
 
   return (
-    <div>
-      <h1>{isRegistering ? 'Registro' : 'Iniciar Sesión'}</h1>
-      <form onSubmit={handleSubmit(handleAuth)}>
+    <div className={styles.container}>
+      <h1>Kodigo Spark</h1>
+      <form onSubmit={handleSubmit(handleAuth)} className={styles.login}>
+        <h2>{isRegistering ? 'Registro' : 'Iniciar Sesión'}</h2>
         <div>
           <label>
-            Email:
-            <input
-              type="email"
-              {...register('email', { required: 'Email es requerido' })}
-            />
+            <FaCircleUser />
           </label>
+          <input
+            type="email"
+            {...register('email', { required: 'Email es requerido' })}
+            placeholder='Correo electrónico'
+          />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div>
           <label>
-            Contraseña:
+            <RiLockPasswordFill />
+
             <input
               type="password"
               {...register('password', {
                 required: 'Contraseña es requerida',
                 minLength: { value: 6, message: 'Mínimo 6 caracteres' },
               })}
+              placeholder='Contraseña'
             />
           </label>
           {errors.password && <p>{errors.password.message}</p>}
         </div>
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} className={styles.signin}>
           {loading
             ? 'Cargando...'
             : isRegistering
-            ? 'Registrarse'
-            : 'Iniciar Sesión'}
+              ? 'Registrarse'
+              : 'Iniciar Sesión'}
+        </button>
+
+        <p>
+          {isRegistering
+            ? '¿Ya tienes cuenta? Inicia sesión'
+            : '¿No tienes cuenta? Regístrate'}
+        </p>
+        <button onClick={() => setIsRegistering(!isRegistering)} className={styles.register}>
+          {isRegistering ? 'Inicia sesión' : 'Regístrate'}
         </button>
       </form>
-
-      <button onClick={() => setIsRegistering(!isRegistering)}>
-        {isRegistering
-          ? '¿Ya tienes cuenta? Inicia sesión'
-          : '¿No tienes cuenta? Regístrate'}
-      </button>
-
-      <div style={{ marginTop: '20px' }}>
-        <button
-          onClick={async () => {
-            const { data } = await supabase.auth.getSession();
-            console.log('Sesión actual:', data);
-          }}
-        >
-          Verificar Sesión (ver consola)
-        </button>
-      </div>
     </div>
   );
 }
