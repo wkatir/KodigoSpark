@@ -16,6 +16,5 @@ export default function Home() {
       }
     }
   }, [user, loading, router]);
-
   return null; 
 }
