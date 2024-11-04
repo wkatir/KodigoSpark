@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--primary-font);
+}
+
+.message h1 {
+    font-size: 3.8rem;
+    color: var(--black-color);
+    text-shadow: 5px 10px 2px var(--primary-color);
+}
+
+.message a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white-color);
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: var(--black-color);
+}
+
+.message a:hover {
+    box-shadow: 10px 10px 5px var(--primary-color);
+    transform: translateY(-3px);
+}
