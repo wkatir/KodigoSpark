@@ -1,9 +1,8 @@
 'use client';
 import { useAuth } from '@/hooks/useAuth';
 import Dashboard from './dashboard/DashBoard/DashBoard';
-import styles from './page.module.css';
 import supabase from '@/utils/supabase';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 
 
 export default function Home() {

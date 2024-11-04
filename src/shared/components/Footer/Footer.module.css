@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black-color);
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 30px 30px 0 0;
+    color: var(--white-color);
+
+}
+
+.title {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.socials {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+.socials a {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: var(--primary-color);
+}
