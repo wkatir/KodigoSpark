@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { Navbar } from '@/shared/components/Navbar/Navbar';
 import styles from '@/app/dashboard/DashBoard/DashBoard.module.css';
+import Footer from '@/shared/components/Footer/Footer';
 
 export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
   const [showForm, setShowForm] = useState(false);
@@ -67,6 +68,8 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
           />
         )}
       </div>
+
+      <Footer/>
     </>
   );
 }
