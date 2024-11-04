@@ -1,5 +1,5 @@
-import styles from '@/shared/components/Navbar/Navbar.module.css'
-import Link from 'next/link'
+import styles from '@/shared/components/Navbar/Navbar.module.css';
+import Link from 'next/link';
 
 export const Navbar = () => {
     return (
@@ -12,5 +12,5 @@ export const Navbar = () => {
                 <Link href=''>FAQ</Link>
             </div>
         </nav>
-    )
-}
+    );
+};

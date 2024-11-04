@@ -1,11 +1,12 @@
+// File: src/components/Dashboard.tsx
 import { useBootcamps } from '@/hooks/useBootcamps';
 import { BootcampList } from './components/BootcampList/BootcampList';
-import { InscripcionForm } from './components/InscriptionForm/InscriptionForm';
 import { useState } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { Navbar } from '@/shared/components/Navbar/Navbar';
 import styles from '@/app/dashboard/DashBoard/DashBoard.module.css';
 import Footer from '@/shared/components/Footer/Footer';
+import { InscripcionForm } from './components/InscriptionForm/InscriptionForm';
 
 export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
   const [showForm, setShowForm] = useState(false);
@@ -17,7 +18,6 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
     isInscrito,
     handleDesinscripcion,
     handleInscripcion,
-    handleLogout
   } = useBootcamps(supabase);
 
   if (!user) {
@@ -32,7 +32,7 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
         <Navbar />
         <div className={styles.user}>
           <span>{user.email}</span>
-          <button onClick={handleLogout}>Cerrar Sesión</button>
+          {/* Aquí se eliminó el botón de cerrar sesión */}
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+// File: src/hooks/useBootcamps.ts
 import { useState, useEffect } from 'react';
 import { SupabaseClient, User } from '@supabase/supabase-js';
 import { Bootcamp, FormInputs, Inscripcion } from '@/interfaces';
@@ -68,14 +69,12 @@ export const useBootcamps = (supabase: SupabaseClient) => {
     try {
       const { error } = await supabase
         .from('inscripciones')
-        .insert([
-          {
-            user_id: user.id,
-            bootcamp_id: bootcampId,
-            fecha_inscripcion: new Date(),
-            ...data
-          }
-        ]);
+        .insert([{
+          user_id: user.id,
+          bootcamp_id: bootcampId,
+          fecha_inscripcion: new Date(),
+          ...data
+        }]);
 
       if (error) throw error;
       
@@ -99,14 +98,5 @@ export const useBootcamps = (supabase: SupabaseClient) => {
     isInscrito,
     handleDesinscripcion,
     handleInscripcion,
-    handleLogout: async () => {
-      try {
-        const { error } = await supabase.auth.signOut();
-        if (error) throw error;
-      } catch (error) {
-        console.error('Error al cerrar sesión:', error);
-        alert('Error al cerrar sesión');
-      }
-    }
   };
 };

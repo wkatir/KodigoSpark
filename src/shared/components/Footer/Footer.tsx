@@ -13,7 +13,7 @@ const Footer = () => {
                 <a href="#"><FaFacebook /></a>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

@@ -1,20 +1,19 @@
 'use client';
 import { useAuth } from '@/hooks/useAuth';
-import Dashboard from './dashboard/DashBoard/DashBoard';
-import supabase from '@/utils/supabase';
-import Login from './components/Login/Login';
-
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
   const user = useAuth();
+  const router = useRouter();
 
-  return (
-    <div>
-      {!user ? (
-        <Login supabase={supabase} />
-      ) : (
-        <Dashboard supabase={supabase} />
-      )}
-    </div>
-  );
+  useEffect(() => {
+    if (!user) {
+      router.push('/login'); 
+    } else {
+      router.push('/dashboard');
+    }
+  }, [user, router]);
+
+  return null; 
 }
