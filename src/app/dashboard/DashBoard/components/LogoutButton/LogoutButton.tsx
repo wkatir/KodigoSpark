@@ -3,6 +3,7 @@
 import { useAuth } from '@/context/AuthContext';
 import supabase from '@/utils/supabase';
 import { useRouter } from 'next/navigation'; 
+import style from '@/app/dashboard/DashBoard/components/LogoutButton/LogoutButton.module.css';
 
 const LogoutButton = () => {
   const { user } = useAuth(); 
@@ -19,7 +20,7 @@ const LogoutButton = () => {
 
   return (
     user && ( 
-      <button onClick={handleLogout} className="logout-button">
+      <button onClick={handleLogout} className={style.logoutButton}>
         Cerrar Sesión
       </button>
     )

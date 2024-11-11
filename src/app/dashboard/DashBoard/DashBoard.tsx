@@ -30,9 +30,9 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
     <>
       <div className={styles.header}>
         <Navbar />
-        <LogoutButton></LogoutButton>
         <div className={styles.user}>
           <span>{user.email}</span>
+          <LogoutButton></LogoutButton>
         </div>
       </div>
 
