@@ -6,7 +6,6 @@ import { Navbar } from '@/shared/components/Navbar/Navbar';
 import styles from '@/app/dashboard/DashBoard/DashBoard.module.css';
 import Footer from '@/shared/components/Footer/Footer';
 import { InscripcionForm } from './components/InscriptionForm/InscriptionForm';
-import LogoutButton from './components/LogoutButton/LogoutButton';
 import { Loading } from '@/shared/components/Loading/Loading';
 
 export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
@@ -22,18 +21,17 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
   } = useBootcamps(supabase);
 
   if (!user) {
-    return <Loading></Loading>; 
+    return <Loading></Loading>;
   }
 
   const selectedBootcampData = bootcamps.find(b => b.id === selectedBootcamp) ?? null;
 
   return (
     <>
+      <Navbar />
       <div className={styles.header}>
-        <Navbar />
         <div className={styles.user}>
           <span>{user.email}</span>
-          <LogoutButton></LogoutButton>
         </div>
       </div>
 
@@ -70,7 +68,7 @@ export default function Dashboard({ supabase }: { supabase: SupabaseClient }) {
         )}
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }
