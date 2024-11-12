@@ -1,0 +1,18 @@
+.logoutButton {
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    margin: 0 1.8rem;
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logoutButton:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}

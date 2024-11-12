@@ -49,7 +49,7 @@
     margin: 1rem;
     padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: var(--black-color);
     color: var(--white-color);
     font-family: var(--secondary-font);
@@ -70,4 +70,182 @@
 .register:last-of-type:hover {
     text-decoration: underline;
     color: #748f0a;
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 2.5rem;
+    }
+
+    .login {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 1.5rem;
+    }
+
+    .login h2 {
+        font-size: 1rem;
+    }
+
+    .login label {
+        font-size: 1.5rem;
+    }
+
+    .login input {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .signin {
+        padding: 0.6rem 1rem;
+    }
+
+    .register {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+    .container h1 {
+        font-size: 2.7rem;
+    }
+
+    .login {
+        max-width: 85%;
+        margin: 30px auto;
+        padding: 2rem;
+    }
+
+    .login h2 {
+        font-size: 1rem;
+    }
+
+    .login label {
+        font-size: 1.8rem;
+    }
+
+    .login input {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .signin {
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .container h1 {
+        font-size: 2.8rem;
+    }
+
+    .login {
+        max-width: 70%;
+        margin: 40px auto;
+        padding: 2.2rem;
+    }
+
+    .login h2 {
+        font-size: 2rem;
+    }
+
+    .login label {
+        font-size: 1.8rem;
+    }
+
+    .login input {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .signin {
+        padding: 0.8rem 1.3rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    .login {
+        max-width: 50%;
+        margin: 50px auto;
+        padding: 2.5rem;
+    }
+
+    .login h2 {
+        font-size: 2rem;
+    }
+
+    .login label {
+        font-size: 2rem;
+    }
+
+    .login input {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .signin {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .container h1 {
+        font-size: 2.5rem;
+    }
+
+    .login {
+        max-width: 40%;
+        margin: 60px auto;
+        padding: 3rem;
+    }
+
+    .login h2 {
+        font-size: 2.3rem;
+    }
+
+    .login label {
+        font-size: 2.2rem;
+    }
+
+    .login input {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    .signin {
+        padding: 0.9rem 1.6rem;
+    }
+}
+
+@media (min-width: 1201px) {
+    .container h1 {
+        font-size: 2.5rem;
+    }
+
+    .login {
+        max-width: 25%;
+        margin: 50px auto;
+        padding: 2.5rem;
+    }
+
+    .login h2 {
+        font-size: 2.3rem;
+    }
+
+    .login label {
+        font-size: 2rem;
+    }
+
+    .login input {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .signin {
+        padding: 1rem 1.7rem;
+    }
 }

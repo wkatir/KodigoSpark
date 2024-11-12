@@ -1,0 +1,23 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--soft-gray-color);
+}
+
+.icon {
+    font-size: 4rem !important;
+    animation: spin 2s linear infinite !important;
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
